@@ -279,16 +279,24 @@
 
     .section-nav ul {
       list-style: none;
-      display: grid;
-      grid-template-columns: repeat(5, minmax(0, 1fr));
-      gap: 12px;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .section-nav li {
+      flex: 1 1 0;
+      min-width: 0;
     }
 
     .section-nav a {
       display: block;
-      padding: 12px 0;
+      width: 100%;
+      padding: 12px 0 14px;
       border-radius: 0;
       border: none;
+      border-bottom: 1px solid rgba(23, 23, 23, 0.12);
       background: transparent;
       font-weight: 700;
       color: var(--ink);
@@ -675,9 +683,14 @@
       .kpi-grid,
       .faq-grid,
       .contact-grid,
-      .section-nav ul,
       .cta-strip {
         grid-template-columns: 1fr;
+      }
+
+      .section-nav ul {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
       }
 
       .section-head {
