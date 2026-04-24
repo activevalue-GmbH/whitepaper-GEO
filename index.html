@@ -193,6 +193,7 @@
       display: grid;
       gap: 22px;
       align-content: start;
+      align-self: start;
     }
 
     .cta-card h2,
@@ -404,6 +405,7 @@
     .section-head p {
       max-width: 52ch;
       line-height: 1.8;
+      padding-top: 6px;
     }
 
     .grid-2,
@@ -431,6 +433,7 @@
     .metric-block {
       padding-top: 18px;
       margin-top: 28px;
+      margin-bottom: 10px;
     }
 
     .metric-item {
@@ -461,6 +464,13 @@
       border-radius: 0;
       background: transparent;
       padding: 20px 0 0;
+    }
+
+    .grid-3 .card,
+    .matrix-grid .matrix-card,
+    .kpi-grid .card,
+    .contact-grid .contact-card {
+      padding-top: 24px;
     }
 
     .card h3,
@@ -537,6 +547,11 @@
       background: #fff;
     }
 
+    .matrix-grid + .table-wrap,
+    .table-wrap + .table-wrap {
+      margin-top: 36px;
+    }
+
     table {
       width: 100%;
       border-collapse: collapse;
@@ -598,6 +613,7 @@
 
     .table-note {
       margin-top: 16px;
+      max-width: 58ch;
     }
 
     .body-copy {
@@ -605,6 +621,7 @@
       color: var(--text);
       font-size: 16px;
       line-height: 1.8;
+      max-width: 60ch;
     }
 
     .cta-strip {
@@ -613,7 +630,7 @@
       padding: 28px 0 0;
       display: grid;
       grid-template-columns: minmax(0, 1fr) auto;
-      gap: 24px;
+      gap: 32px;
       align-items: center;
       background: transparent;
       border: none;
@@ -624,6 +641,7 @@
     .phase-list {
       display: grid;
       gap: 22px;
+      margin-top: 10px;
     }
 
     .phase {
@@ -679,6 +697,7 @@
       display: grid;
       gap: 12px;
       margin-top: 18px;
+      max-width: 58ch;
     }
 
     .bullet-list li {
@@ -719,6 +738,18 @@
 
     .subsection-title {
       margin-top: 28px;
+    }
+
+    .contact-grid {
+      align-items: start;
+    }
+
+    .contact-grid .contact-card:first-child {
+      padding-right: 20px;
+    }
+
+    .contact-grid .contact-card:last-child {
+      padding-left: 10px;
     }
 
     .footer {
@@ -794,6 +825,12 @@
       .faq-item,
       .contact-card {
         padding: 28px 24px;
+      }
+
+      .contact-grid .contact-card:first-child,
+      .contact-grid .contact-card:last-child {
+        padding-left: 0;
+        padding-right: 0;
       }
 
       .card,
