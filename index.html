@@ -819,7 +819,7 @@
             </p>
           </div>
 
-          <form class="cta-form" data-mail-recipient="anton@active-value.de">
+          <form class="cta-form" data-mail-recipient="anton.klees@active-value.de">
             <label>
               <div class="field-label">Zu prüfende Domain</div>
               <input type="text" name="domain" placeholder="z. B. example.com" inputmode="url" autocomplete="url">
@@ -1217,7 +1217,7 @@
                 Der einfachste Einstieg ist ein kompakter Check Ihrer Domain. Sie bekommen eine
                 erste Einordnung, wo strukturelle und inhaltliche Hebel liegen.
               </p>
-              <form class="cta-form" data-mail-recipient="anton@active-value.de" style="margin-top: 18px;">
+              <form class="cta-form" data-mail-recipient="anton.klees@active-value.de" style="margin-top: 18px;">
                 <label>
                   <div class="field-label">Domain</div>
                   <input type="text" name="domain" placeholder="z. B. company.de" inputmode="url" autocomplete="url">
@@ -1278,13 +1278,19 @@
       return value.trim().replace(/^https?:\/\//i, "").replace(/\/.*$/, "");
     }
 
+    let mailtoInFlight = false;
+
     document.querySelectorAll(".cta-form").forEach((form) => {
       form.addEventListener("submit", (event) => {
         event.preventDefault();
 
+        if (mailtoInFlight) {
+          return;
+        }
+
         const input = form.querySelector('input[name="domain"]');
         const feedback = form.querySelector(".form-feedback");
-        const recipient = form.dataset.mailRecipient || "anton@active-value.de";
+        const recipient = form.dataset.mailRecipient || "anton.klees@active-value.de";
         const domain = normalizeDomain(input.value);
 
         if (!domain || !domain.includes(".")) {
@@ -1303,6 +1309,11 @@
           "\r\n\r\n" +
           "Viele Grüße"
         );
+
+        mailtoInFlight = true;
+        setTimeout(() => {
+          mailtoInFlight = false;
+        }, 2500);
 
         window.location.href = "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
       });
