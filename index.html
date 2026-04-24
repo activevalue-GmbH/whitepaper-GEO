@@ -84,6 +84,19 @@
     }
 
     .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand-mark {
+      width: 120px;
+      height: auto;
+      display: block;
+      flex-shrink: 0;
+    }
+
+    .brand-copy {
       display: grid;
       gap: 4px;
     }
@@ -781,8 +794,11 @@
   <header class="site-header">
     <div class="shell header-row">
       <div class="brand">
-        <span class="eyebrow">active value · Whitepaper</span>
-        <strong>GEO für Entscheider:innen im E-Commerce und Corporate-Kontext</strong>
+        <img class="brand-mark" src="assets/logo.png" alt="active value">
+        <div class="brand-copy">
+          <span class="eyebrow">active value · Whitepaper</span>
+          <strong>GEO für Entscheider:innen im E-Commerce und Corporate-Kontext</strong>
+        </div>
       </div>
     </div>
   </header>
