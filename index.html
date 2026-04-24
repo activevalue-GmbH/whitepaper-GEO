@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEO Whitepaper | active value</title>
+  <meta
+    name="description"
+    content="Mobiles Whitepaper von active value zum Thema GEO mit klarer Einordnung, Reifegrad-Check, Maßnahmenbild und mehrfach integrierter CTA zur Domain-Prüfung."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,500;0,600;0,700;1,400&amp;family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --green: #6b7d5f;
+      --green-dark: #4f5d47;
+      --green-soft: #f1f2ec;
+      --ink: #171717;
+      --text: #303030;
+      --muted: #6a6a6a;
+      --line: #ddddda;
+      --surface: rgba(255, 255, 255, 0.92);
+      --surface-strong: #ffffff;
+      --surface-alt: #f7f6f2;
+      --warm: #9d6d3d;
+      --warm-soft: #f6efe6;
+      --danger: #9e4b3f;
+      --danger-soft: #f7ece8;
+      --paper: #f3f2ee;
+      --shadow: 0 10px 24px rgba(0, 0, 0, 0.035);
+      --radius-xl: 12px;
+      --radius-lg: 10px;
+      --radius-md: 8px;
+      --max-width: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Barlow", sans-serif;
+      color: var(--text);
+      background: #f5f5f1;
+      line-height: 1.6;
+    }
+
+    body::before {
+      content: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid rgba(22, 27, 20, 0.08);
+      background: rgba(245, 245, 241, 0.9);
+      backdrop-filter: blur(18px);
+    }
+
+    .header-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 18px 0;
+    }
+
+    .brand {
+      display: grid;
+      gap: 4px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+    }
+
+    .brand strong {
+      font-family: "Source Serif 4", serif;
+      font-size: 18px;
+      color: var(--ink);
+    }
+
+    .header-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: flex-end;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      min-height: auto;
+      padding: 0;
+      border-radius: 0;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      padding: 28px 0 14px;
+    }
+
+    .hero-card {
+      display: grid;
+      grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.88fr);
+      gap: 26px;
+      padding: 34px;
+      border: 1px solid rgba(22, 27, 20, 0.08);
+      border-radius: 0;
+      background: rgba(255, 255, 255, 0.96);
+      box-shadow: none;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-card::after {
+      content: none;
+    }
+
+    .hero-copy h1 {
+      font-family: "Source Serif 4", serif;
+      font-size: clamp(36px, 5vw, 62px);
+      line-height: 0.98;
+      color: var(--ink);
+      margin: 10px 0 16px;
+      max-width: 11ch;
+      text-wrap: balance;
+      letter-spacing: -0.02em;
+    }
+
+    .hero-copy p {
+      max-width: 60ch;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    .hero-hook {
+      margin-top: 22px;
+      padding: 16px 18px;
+      border-left: 2px solid rgba(23, 23, 23, 0.35);
+      border-radius: 0;
+      background: transparent;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .hero-points {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .mini-stat {
+      padding: 14px 0 0;
+      border-radius: 0;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .mini-stat strong {
+      display: block;
+      font-family: "Source Serif 4", serif;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .mini-stat span {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .cta-card,
+    .cta-strip,
+    .section,
+    .callout,
+    .faq-item {
+      border: 1px solid rgba(23, 23, 23, 0.08);
+      background: var(--surface);
+      box-shadow: none;
+    }
+
+    .cta-card {
+      position: relative;
+      z-index: 1;
+      border-radius: 0;
+      padding: 26px;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+    }
+
+    .cta-card h2,
+    .section-head h2,
+    .cta-strip h3,
+    .callout h3,
+    .faq-item h3 {
+      font-family: "Source Serif 4", serif;
+      color: var(--ink);
+    }
+
+    .cta-card p,
+    .cta-strip p,
+    .section-head p,
+    .card p,
+    .matrix-card p,
+    .phase li,
+    .table-note,
+    .faq-item p,
+    .contact-card p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .cta-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .field-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .cta-form input {
+      width: 100%;
+      min-height: 50px;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      padding: 0 16px;
+      font: inherit;
+      color: var(--ink);
+      background: #f9faf7;
+    }
+
+    .cta-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 18px;
+      border: none;
+      border-radius: 0;
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      color: #fff;
+      background: var(--ink);
+      box-shadow: none;
+    }
+
+    .button-secondary {
+      color: var(--ink);
+      background: #fff;
+      border: 1px solid rgba(23, 23, 23, 0.14);
+    }
+
+    .microcopy {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .form-feedback {
+      min-height: 20px;
+      font-size: 13px;
+      color: var(--danger);
+    }
+
+    .section-nav {
+      padding: 10px 0 2px;
+    }
+
+    .section-nav ul {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .section-nav a {
+      display: block;
+      padding: 12px 0;
+      border-radius: 0;
+      border: none;
+      border-bottom: 1px solid rgba(23, 23, 23, 0.12);
+      background: transparent;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    main {
+      padding: 18px 0 72px;
+    }
+
+    .section {
+      margin-top: 30px;
+      border-radius: 0;
+      overflow: hidden;
+    }
+
+    .section-inner {
+      padding: 40px 34px;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 20px;
+      padding-bottom: 18px;
+      margin-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+    }
+
+    .section-kicker span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      background: var(--ink);
+      color: #fff;
+    }
+
+    .section-head h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.08;
+      max-width: 16ch;
+    }
+
+    .section-head p {
+      max-width: 54ch;
+    }
+
+    .grid-2,
+    .grid-3,
+    .matrix-grid,
+    .metric-grid,
+    .kpi-grid,
+    .faq-grid,
+    .contact-grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid-2 {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid-3,
+    .matrix-grid,
+    .metric-grid,
+    .kpi-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .metric-block {
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      margin-top: 22px;
+    }
+
+    .metric-item {
+      border-top: 1px solid var(--line);
+      padding-top: 16px;
+    }
+
+    .metric-item strong {
+      display: block;
+      font-family: "Source Serif 4", serif;
+      font-size: 34px;
+      line-height: 1;
+      color: var(--green-dark);
+      margin-bottom: 8px;
+    }
+
+    .metric-item span {
+      display: block;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .card,
+    .matrix-card,
+    .contact-card {
+      border: none;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+      padding: 18px 0 0;
+    }
+
+    .card h3,
+    .matrix-card h3,
+    .phase h3,
+    .contact-card h3 {
+      font-family: "Source Serif 4", serif;
+      font-size: 20px;
+      color: var(--ink);
+      margin-bottom: 10px;
+    }
+
+    .label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--green-dark);
+      margin-bottom: 6px;
+    }
+
+    .callout {
+      margin-top: 24px;
+      border-radius: 0;
+      padding: 22px 0 0;
+      background: transparent;
+      border: none;
+      border-top: 2px solid rgba(23, 23, 23, 0.14);
+      box-shadow: none;
+    }
+
+    .callout p {
+      font-size: 16px;
+      color: var(--text);
+    }
+
+    .quote-box {
+      margin-top: 28px;
+      padding: 4px 0 0 22px;
+      border-left: 3px solid var(--green-dark);
+    }
+
+    .quote-box blockquote {
+      font-family: "Source Serif 4", serif;
+      font-size: clamp(22px, 2.4vw, 30px);
+      line-height: 1.3;
+      color: var(--ink);
+    }
+
+    .quote-source {
+      margin-top: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .table-wrap {
+      margin-top: 24px;
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 0;
+      background: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead th {
+      padding: 14px 16px;
+      text-align: left;
+      background: var(--ink);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    tbody td {
+      padding: 16px;
+      border-bottom: 1px solid var(--line);
+      vertical-align: top;
+      color: var(--text);
+    }
+
+    tbody tr:nth-child(even) td {
+      background: rgba(245, 247, 241, 0.8);
+    }
+
+    tbody tr.highlight td {
+      background: #f3f2ed;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 32px;
+      padding: 0 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+      color: #fff;
+    }
+
+    .pill.good {
+      background: var(--green-dark);
+    }
+
+    .pill.mid {
+      background: var(--warm);
+    }
+
+    .pill.low {
+      background: var(--danger);
+    }
+
+    .table-note {
+      margin-top: 12px;
+    }
+
+    .body-copy {
+      margin-top: 16px;
+      color: var(--text);
+      font-size: 16px;
+    }
+
+    .cta-strip {
+      margin-top: 28px;
+      border-radius: 0;
+      padding: 24px 0 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 18px;
+      align-items: center;
+      background: transparent;
+      border: none;
+      border-top: 1px solid rgba(23, 23, 23, 0.12);
+      box-shadow: none;
+    }
+
+    .phase-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .phase {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 18px;
+      padding: 20px 0 0;
+      border: none;
+      border-top: 1px solid var(--line);
+      border-radius: 0;
+      background: transparent;
+    }
+
+    .phase-num {
+      min-width: 48px;
+      font-family: "Source Serif 4", serif;
+      font-size: 28px;
+      line-height: 1;
+      color: var(--green-dark);
+    }
+
+    .phase-meta {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .phase ul {
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .phase li {
+      position: relative;
+      padding-left: 16px;
+    }
+
+    .phase li::before {
+      content: "→";
+      position: absolute;
+      left: 0;
+      color: var(--green-dark);
+    }
+
+    .bullet-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .bullet-list li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--text);
+    }
+
+    .bullet-list li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--green-dark);
+      font-weight: 700;
+    }
+
+    .faq-grid,
+    .contact-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .faq-item {
+      border-radius: 0;
+      padding: 22px 0 0;
+      border: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .contact-card {
+      background: transparent;
+    }
+
+    .subsection-title {
+      margin-top: 22px;
+    }
+
+    .footer {
+      padding: 0 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer-bar {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      padding-top: 22px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 980px) {
+      .hero-card,
+      .grid-2,
+      .grid-3,
+      .matrix-grid,
+      .metric-grid,
+      .kpi-grid,
+      .faq-grid,
+      .contact-grid,
+      .section-nav ul,
+      .hero-points,
+      .cta-strip {
+        grid-template-columns: 1fr;
+      }
+
+      .section-head {
+        align-items: start;
+      }
+
+      .section-head h2 {
+        max-width: none;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .header-row,
+      .footer-bar,
+      .cta-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .header-meta {
+        justify-content: flex-start;
+      }
+
+      .hero-card,
+      .cta-card,
+      .section-inner,
+      .cta-strip,
+      .faq-item,
+      .contact-card {
+        padding: 22px;
+      }
+
+      .card,
+      .matrix-card,
+      .phase,
+      .faq-item,
+      .contact-card,
+      .cta-strip {
+        padding-left: 0;
+        padding-right: 0;
+      }
+
+      .hero-copy p {
+        font-size: 17px;
+      }
+
+      .phase {
+        grid-template-columns: 1fr;
+      }
+
+      .phase-num {
+        min-width: 0;
+      }
+
+      table,
+      thead,
+      tbody,
+      th,
+      td,
+      tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      .table-wrap {
+        border: none;
+        background: transparent;
+      }
+
+      tbody {
+        display: grid;
+        gap: 14px;
+      }
+
+      tbody tr {
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        overflow: hidden;
+        background: #fff;
+        box-shadow: 0 10px 24px rgba(23, 34, 16, 0.05);
+      }
+
+      tbody td {
+        display: grid;
+        grid-template-columns: minmax(120px, 0.9fr) minmax(0, 1.1fr);
+        gap: 12px;
+        border-bottom: 1px solid rgba(216, 223, 211, 0.8);
+        background: transparent;
+      }
+
+      tbody td:last-child {
+        border-bottom: none;
+      }
+
+      tbody td::before {
+        content: attr(data-label);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-row">
+      <div class="brand">
+        <span class="eyebrow">active value · Whitepaper</span>
+        <strong>GEO für Entscheider:innen im E-Commerce und Corporate-Kontext</strong>
+      </div>
+      <div class="header-meta">
+          <span class="badge">HTML First</span>
+          <span class="badge">Mobil optimiert</span>
+          <span class="badge">April 2026</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="shell">
+    <section class="hero">
+      <div class="hero-card">
+        <div class="hero-copy">
+          <div class="eyebrow">GEO Whitepaper · KI-Sichtbarkeit</div>
+          <h1>Sie fragen.<br>Die KI antwortet.<br>Ihr Unternehmen kommt nicht vor.</h1>
+          <p>
+            GEO entscheidet mit darüber, ob Unternehmen in KI-Antworten überhaupt sichtbar werden.
+            Wer dort nicht sauber lesbar, glaubwürdig und inhaltlich anschlussfähig aufgebaut ist,
+            verliert Aufmerksamkeit oft schon vor dem ersten Website-Besuch.
+          </p>
+          <div class="hero-hook">
+            Die eigentliche Frage ist nicht nur, ob Sie gefunden werden. Sondern ob KI-Systeme Ihr
+            Unternehmen bei relevanten Fragen überhaupt nennen.
+          </div>
+          <div class="hero-points">
+            <div class="mini-stat">
+              <strong>1</strong>
+              <span>klarer Einstieg mit sofortiger CTA für alle, die direkt prüfen wollen</span>
+            </div>
+            <div class="mini-stat">
+              <strong>3</strong>
+              <span>gezielte CTA-Momente über die Seite verteilt statt nur im Footer</span>
+            </div>
+            <div class="mini-stat">
+              <strong>100 %</strong>
+              <span>tabellen- und mobilfähig durch responsives HTML statt PDF-only Logik</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="cta-card" id="domain-check">
+          <div>
+            <div class="eyebrow">Sofort prüfen</div>
+            <h2>Domain-Check für euren GEO-Status anfragen</h2>
+            <p>
+              Wer nicht erst lesen will, kann hier direkt einen Check anstoßen. Es reicht die
+              Domain. Die Anfrage öffnet eine E-Mail an Anton mit vorbereiteter Betreffzeile.
+            </p>
+          </div>
+
+          <form class="cta-form" data-mail-recipient="anton@active-value.de">
+            <label>
+              <div class="field-label">Zu prüfende Domain</div>
+              <input type="text" name="domain" placeholder="z. B. example.com" inputmode="url" autocomplete="url">
+            </label>
+            <div class="cta-actions">
+              <button class="button button-primary" type="submit">Check bei Anton anfragen</button>
+              <a class="button button-secondary" href="#reifegrad">Erst Whitepaper lesen</a>
+            </div>
+            <div class="microcopy">Kontaktdaten kommen aus der E-Mail. Ein separates Formularfeld ist deshalb nicht nötig.</div>
+            <div class="form-feedback" aria-live="polite"></div>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <nav class="section-nav" aria-label="Seitennavigation">
+      <ul>
+        <li><a href="#warum">Warum GEO jetzt zählt</a></li>
+        <li><a href="#reifegrad">Woran Reife sichtbar wird</a></li>
+        <li><a href="#selbsttest">Wo Sie stehen</a></li>
+        <li><a href="#roadmap">Wie man startet</a></li>
+        <li><a href="#kontakt">Check anfordern</a></li>
+      </ul>
+    </nav>
+
+    <main>
+      <section class="section" id="warum">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker"><span>1</span> Ausgangslage</div>
+              <h2>GEO baut auf SEO auf, verschiebt Sichtbarkeit aber in KI-Antworten</h2>
+            </div>
+            <p>
+              Für viele Unternehmen entsteht gerade eine neue Sichtbarkeitsebene:
+              nicht mehr nur Trefferlisten, sondern verdichtete Antworten, in denen
+              Marken, Produkte und Argumente direkt vorkommen oder eben fehlen.
+            </p>
+          </div>
+
+          <div class="metric-block">
+            <div class="metric-grid">
+              <div class="metric-item">
+                <strong>900 Mio.</strong>
+                <span>wöchentlich aktive ChatGPT-Nutzer (OpenAI, März 2026)</span>
+              </div>
+              <div class="metric-item">
+                <strong>393 %</strong>
+                <span>Wachstum des KI-Referral-Traffics (Adobe, Q1 2026)</span>
+              </div>
+              <div class="metric-item">
+                <strong>4,4×</strong>
+                <span>höhere Conversion-Rate von KI-Traffic vs. Google Organic (Semrush, 2026)</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid-3">
+            <article class="card">
+              <div class="label">Shift im Verhalten</div>
+              <h3>Recherche startet häufiger in Antworten</h3>
+              <p>
+                Nutzer:innen wollen weniger Listen und mehr Einordnung. Genau dort
+                gewinnen Anbieter, deren Inhalte und Signale maschinenlesbar, präzise
+                und vertrauenswürdig aufgebaut sind.
+              </p>
+            </article>
+            <article class="card">
+              <div class="label">Problem für viele Marken</div>
+              <h3>Gute Inhalte, aber schwache Lesbarkeit</h3>
+              <p>
+                Die inhaltliche Qualität ist oft vorhanden, doch Struktur, Entitäten,
+                Belege und semantische Zuordnung reichen nicht aus, damit KI-Systeme
+                daraus verlässlich Empfehlungen machen.
+              </p>
+            </article>
+            <article class="card">
+              <div class="label">Chance</div>
+              <h3>Wer früh sauber aufsetzt, baut Vorsprung auf</h3>
+              <p>
+                Gerade in beratungsnahen Themenfeldern können Unternehmen ihre
+                Autorität sichtbar machen, bevor der Markt flächendeckend nachzieht.
+              </p>
+            </article>
+          </div>
+
+          <div class="quote-box">
+            <blockquote>
+              „Wer in den Antworten nicht als Lösung erscheint, existiert für einen wachsenden Teil der Zielgruppe schlicht nicht. Die Shortlist wird von der KI vorgefiltert – nicht mehr vom Käufer.“
+            </blockquote>
+            <div class="quote-source">Quelle: Forrester B2B Buying Study, 2026</div>
+          </div>
+
+          <div class="callout">
+            <h3>Die operative Leitfrage</h3>
+            <p>
+              Nicht nur: "Sind wir bei Google sichtbar?" Sondern vor allem: "Werden wir
+              in generativen Antworten als plausibler, belastbarer und passender Anbieter genannt?"
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="reifegrad">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker"><span>2</span> Reifegrad</div>
+              <h2>Woran man erkennt, ob eine Domain GEO-fähig ist</h2>
+            </div>
+            <p>
+              Der eigentliche Hebel liegt fast nie in einem einzelnen Trick. Es ist die
+              Kombination aus Struktur, Evidenz, inhaltlicher Klarheit und sauberer
+              Entitätsführung über die gesamte Domain.
+            </p>
+          </div>
+
+          <div class="table-wrap">
+            <table aria-label="Vergleich SEO und GEO">
+              <thead>
+                <tr>
+                  <th>Dimension</th>
+                  <th>Klassische Suchmaschine</th>
+                  <th>KI-System</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Dimension">Ergebnis</td>
+                  <td data-label="Klassische Suchmaschine">Liste von Links</td>
+                  <td data-label="KI-System">Synthetisierte Antwort mit zitierten Quellen</td>
+                </tr>
+                <tr>
+                  <td data-label="Dimension">Ziel</td>
+                  <td data-label="Klassische Suchmaschine">Hohes Ranking → Klick</td>
+                  <td data-label="KI-System">In der Antwort vorkommen → Empfohlen werden</td>
+                </tr>
+                <tr>
+                  <td data-label="Dimension">Kernhebel</td>
+                  <td data-label="Klassische Suchmaschine">Keywords, Backlinks, Meta-Tags</td>
+                  <td data-label="KI-System">Faktendichte, Struktur, Earned Media</td>
+                </tr>
+                <tr>
+                  <td data-label="Dimension">SEO hilft?</td>
+                  <td data-label="Klassische Suchmaschine">Ja, direkt</td>
+                  <td data-label="KI-System">Teilweise – kein zuverlässiger Proxy für KI-Sichtbarkeit</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="body-copy">
+            83 Prozent der in KI-Systemen zitierten Quellen stehen nicht in den organischen Top 10 von Google.
+            26 Prozent der Marken haben null Erwähnungen in Google AI Overviews. (BrightEdge 2026, Ahrefs 2025)
+          </p>
+
+          <div class="matrix-grid">
+            <article class="matrix-card">
+              <div class="label">Struktur</div>
+              <h3>Maschinenlesbarkeit</h3>
+              <p>
+                Produktdaten, Leistungen, Organisation, Personen, FAQ und Bezüge
+                müssen konsistent ausgezeichnet und logisch verbunden sein.
+              </p>
+            </article>
+            <article class="matrix-card">
+              <div class="label">Inhalt</div>
+              <h3>Antwortfähigkeit</h3>
+              <p>
+                Gute Seiten beantworten nicht nur Suchwörter, sondern konkrete
+                Entscheidungsfragen, Vergleiche und Einordnungsszenarien.
+              </p>
+            </article>
+            <article class="matrix-card">
+              <div class="label">Vertrauen</div>
+              <h3>Belege und Autorität</h3>
+              <p>
+                Studien, Cases, Bewertungen, Expertise-Signale und klare Quellen
+                helfen, dass Aussagen in Antworten belastbar zitiert werden können.
+              </p>
+            </article>
+          </div>
+
+          <div class="table-wrap">
+            <table aria-label="Beispiel für GEO-Reifegrad">
+              <thead>
+                <tr>
+                  <th>Dimension</th>
+                  <th>Schwach</th>
+                  <th>Solide</th>
+                  <th>Stark</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Dimension">Strukturierte Daten</td>
+                  <td data-label="Schwach">Nur Standard-Metadaten, keine klare Entitätslogik</td>
+                  <td data-label="Solide">Schema teilweise vorhanden, aber inkonsistent</td>
+                  <td data-label="Stark"><span class="pill good">konsequent</span> Organization, Product, FAQ und Bezüge sauber aufgebaut</td>
+                </tr>
+                <tr>
+                  <td data-label="Dimension">Antworttiefe</td>
+                  <td data-label="Schwach">Marketingtexte ohne echte Entscheidungslogik</td>
+                  <td data-label="Solide">Einzelne Ratgeber und Vergleiche vorhanden</td>
+                  <td data-label="Stark">Inhalte beantworten konkrete Nutzersituationen präzise</td>
+                </tr>
+                <tr class="highlight">
+                  <td data-label="Dimension">Vertrauenssignale</td>
+                  <td data-label="Schwach"><span class="pill low">niedrig</span> kaum Belege, kaum Autorenklarheit</td>
+                  <td data-label="Solide"><span class="pill mid">mittel</span> erste Cases, Referenzen und Zahlen vorhanden</td>
+                  <td data-label="Stark"><span class="pill good">hoch</span> Quellen, Expertise und Nachweise sind sichtbar und maschinenlesbar</td>
+                </tr>
+                <tr>
+                  <td data-label="Dimension">Themenführung</td>
+                  <td data-label="Schwach">Themen wirken zufällig und fragmentiert</td>
+                  <td data-label="Solide">Cluster sind erkennbar, aber nicht vollständig</td>
+                  <td data-label="Stark">Klare Themenarchitektur mit nachvollziehbarer Priorisierung</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-note">
+            Genau solche Tabellen müssen auf Mobilgeräten nicht nur kleiner werden, sondern anders funktionieren.
+            Deshalb kippt diese Darstellung unterhalb von 760 Pixeln in lesbare Kartenzeilen um.
+          </p>
+
+          <div class="cta-strip">
+            <div>
+              <h3>Zwischenfazit: Der schnellste Hebel ist ein ehrlicher Domain-Check</h3>
+              <p>
+                Wenn die Seite Interesse weckt, sollte hier nicht erst am Ende die erste Kontaktchance kommen.
+                Deshalb sitzt die zweite CTA genau an dem Punkt, an dem aus Verständnis Handlungsdruck wird.
+              </p>
+            </div>
+            <div class="cta-actions">
+              <a class="button button-primary" href="#kontakt">Jetzt Domain prüfen lassen</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="selbsttest">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker"><span>3</span> Selbsttest</div>
+              <h2>In 10 Minuten: Wo stehen Sie?</h2>
+            </div>
+            <p>
+              Kein Tool, kein Budget. Nur drei Systeme und fünf Prompts. Öffnen Sie ChatGPT,
+              Perplexity und Google AI Overviews jeweils in einem Inkognito-Fenster und stellen
+              Sie dieselben fünf Fragen:
+            </p>
+          </div>
+
+          <div class="table-wrap">
+            <table aria-label="Prompts für den Selbsttest">
+              <thead>
+                <tr>
+                  <th>Typ</th>
+                  <th>Formulierung</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Typ">Kategorie</td>
+                  <td data-label="Formulierung">„Welche Anbieter für [Ihre Kategorie] sind für mittelständische Unternehmen in Deutschland geeignet?"</td>
+                </tr>
+                <tr>
+                  <td data-label="Typ">Vergleich</td>
+                  <td data-label="Formulierung">„Vergleiche die wichtigsten Anbieter für [Kategorie] in DACH – wer ist stark bei Einführung und Support?"</td>
+                </tr>
+                <tr>
+                  <td data-label="Typ">Use-case</td>
+                  <td data-label="Formulierung">„Welcher Dienstleister hilft einem Unternehmen aus [Branche] bei [konkretem Problem]?"</td>
+                </tr>
+                <tr>
+                  <td data-label="Typ">Problem</td>
+                  <td data-label="Formulierung">„Wie lösen Mittelständler [Kernproblem]? Welche Anbieter werden empfohlen?"</td>
+                </tr>
+                <tr>
+                  <td data-label="Typ">Empfehlung</td>
+                  <td data-label="Formulierung">„Empfiehl drei Anbieter für [Kategorie] für Firmen mit 50 bis 500 Mitarbeitern in Deutschland."</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="kpi-grid" style="margin-top: 24px;">
+            <article class="card">
+              <div class="label">AI Mention Rate</div>
+              <h3>Eigene Nennungen ÷ 15</h3>
+              <p>Unter 20 % → kritisch / 20–50 % → Potenzial / Über 50 % → solide</p>
+            </article>
+            <article class="card">
+              <div class="label">Citation Rate</div>
+              <h3>Antworten mit eigener Domain als Quelle ÷ 15</h3>
+              <p>Unter 10 % → schwach</p>
+            </article>
+            <article class="card">
+              <div class="label">Competitor Gap</div>
+              <h3>Antworten mit Wettbewerber, aber ohne Sie ÷ 15</h3>
+              <p>Zeigt, wo konkret verloren wird</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="roadmap">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker"><span>4</span> Roadmap</div>
+              <h2>Ein pragmischer Start in drei Schritten</h2>
+            </div>
+            <p>
+              Für den Start braucht es keinen Mammutplan, sondern eine Reihenfolge:
+              erst Lesbarkeit, dann Antwortfähigkeit, dann Verstetigung.
+            </p>
+          </div>
+
+          <div class="phase-list">
+            <article class="phase">
+              <div class="phase-num">01</div>
+              <div>
+                <div class="phase-meta">Woche 1 bis 2</div>
+                <h3>Strukturelle Klarheit herstellen</h3>
+                <ul>
+                  <li>Zentrale Entitäten definieren: Unternehmen, Leistungen, Produkte, Autor:innen, Belege.</li>
+                  <li>Bestehendes Schema prüfen und die wichtigsten Seiten sauber auszeichnen.</li>
+                  <li>Domain, Navigation und Seitenlogik auf maschinenlesbare Konsistenz bringen.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="phase">
+              <div class="phase-num">02</div>
+              <div>
+                <div class="phase-meta">Monat 1 bis 2</div>
+                <h3>Antwortstarke Inhalte priorisieren</h3>
+                <ul>
+                  <li>Fragen auswählen, bei denen echte Kauf- oder Entscheidungsrelevanz besteht.</li>
+                  <li>Vergleiche, Einordnungen, FAQ und argumentativ starke Pages aufbauen.</li>
+                  <li>Beweise, Referenzen und Aussagen so aufbereiten, dass daraus zitierfähige Signale werden.</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="phase">
+              <div class="phase-num">03</div>
+              <div>
+                <div class="phase-meta">Ab Monat 2</div>
+                <h3>Monitoring und Lernschleifen etablieren</h3>
+                <ul>
+                  <li>Wichtige Prompts und Antwortmuster regelmäßig prüfen.</li>
+                  <li>Gewonnene Erkenntnisse zurück in Content, Struktur und Nachweise spielen.</li>
+                  <li>CTA, Cases und neue Themen so weiterentwickeln, dass aus dem Whitepaper Leads werden.</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="kontakt">
+        <div class="section-inner">
+          <div class="section-head">
+            <div>
+              <div class="section-kicker"><span>5</span> Nächster Schritt</div>
+              <h2>Wenn ihr wissen wollt, wo ihr heute steht, prüft eure Domain</h2>
+            </div>
+            <p>
+              Der CTA am Ende bleibt wichtig, aber er ist hier nur die dritte Gelegenheit,
+              nicht die erste. Das erhöht die Chance auf Kontakt, ohne die Seite zu aufdringlich zu machen.
+            </p>
+          </div>
+
+          <div class="contact-grid">
+            <div class="contact-card">
+              <div class="label">Anfrage</div>
+              <h3>findAIble: Die vollständige Analyse Ihres GEO-Profils</h3>
+              <p>
+                Der manuelle Test zeigt, wo Sie stehen. Was er nicht zeigt: warum.
+                active value setzt für die professionelle GEO-Analyse auf findAIble –
+                eine spezialisierte Analyse-Plattform. findAIble liefert:
+              </p>
+              <ul class="bullet-list">
+                <li>Share of AI Voice: Wie häufig erscheint Ihre Marke im Vergleich zu Wettbewerbern bei relevanten Prompts</li>
+                <li>Citation Rate: Welche Ihrer Seiten tatsächlich als KI-Quelle zitiert werden</li>
+                <li>Sentiment Score: Wie KI-Systeme Ihre Marke beschreiben – und ob das mit Ihrer Zielreputation übereinstimmt</li>
+                <li>Quellen-Mapping: Welche Domains für Ihre Kategorie zitiert werden und wo Sie auf diesen Quellen fehlen</li>
+                <li>Priorisierte Maßnahmenempfehlung mit Aufwand-Wirkung-Einschätzung</li>
+              </ul>
+              <h3 class="subsection-title">GEO-Check direkt anstoßen</h3>
+              <p>
+                Der einfachste Einstieg ist ein kompakter Check eurer Domain. Ihr bekommt eine
+                erste Einordnung, wo strukturelle und inhaltliche Hebel liegen.
+              </p>
+              <form class="cta-form" data-mail-recipient="anton@active-value.de" style="margin-top: 18px;">
+                <label>
+                  <div class="field-label">Domain</div>
+                  <input type="text" name="domain" placeholder="z. B. company.de" inputmode="url" autocomplete="url">
+                </label>
+                <div class="cta-actions">
+                  <button class="button button-primary" type="submit">Mail an Anton vorbereiten</button>
+                </div>
+                <div class="microcopy">Die Seite erzeugt bewusst nur eine E-Mail-Vorlage. Kein Formular-Backend nötig.</div>
+                <div class="form-feedback" aria-live="polite"></div>
+              </form>
+            </div>
+
+            <div class="contact-card">
+              <div class="label">FAQ</div>
+              <h3>Warum diese CTA-Struktur funktioniert</h3>
+              <p>
+                Sie bietet drei Einstiegspunkte für unterschiedliche Nutzerintentionen:
+                sofort handeln, nach erster Einordnung handeln oder nach vollständiger Lektüre handeln.
+              </p>
+              <p style="margin-top: 12px;">
+                Für ein Whitepaper ist das deutlich stärker als nur ein einzelner Abschluss-Button,
+                weil die Kontaktchance entlang des gesamten Leseverlaufs mitwandert.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-grid" style="margin-top: 18px;">
+            <article class="faq-item">
+              <h3>Was noch fehlt, bevor das live gehen kann</h3>
+              <p>
+                Vor allem drei Dinge: finaler Inhalt für das eigentliche Whitepaper, die echte
+                Ziel-Mailadresse von Anton und das gewünschte GitLab-Repo bzw. die Deployment-Umgebung.
+              </p>
+            </article>
+            <article class="faq-item">
+              <h3>Wofür dieser Starter schon taugt</h3>
+              <p>
+                Für einen schnellen Review auf Desktop und Mobil, für interne Diskussionen zur CTA-Logik
+                und als direkte Basis für den finalen Ausbau in GitLab oder als statische Landingpage.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-bar">
+        <div>active value GmbH · Whitepaper Starter für GEO</div>
+        <div>Statischer HTML-Onepager · bereit für GitLab Pages oder andere statische Deployments</div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    function normalizeDomain(value) {
+      return value.trim().replace(/^https?:\/\//i, "").replace(/\/.*$/, "");
+    }
+
+    document.querySelectorAll(".cta-form").forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const input = form.querySelector('input[name="domain"]');
+        const feedback = form.querySelector(".form-feedback");
+        const recipient = form.dataset.mailRecipient || "anton@active-value.de";
+        const domain = normalizeDomain(input.value);
+
+        if (!domain || !domain.includes(".")) {
+          feedback.textContent = "Bitte eine valide Domain eingeben, z. B. example.com.";
+          input.focus();
+          return;
+        }
+
+        feedback.textContent = "";
+
+        const subject = encodeURIComponent("Anfrage GEO-Domain-Check: " + domain);
+        const body = encodeURIComponent(
+          "Hallo Anton,%0D%0A%0D%0A" +
+          "ich möchte gern einen GEO-Check für folgende Domain anfragen:%0D%0A" +
+          domain +
+          "%0D%0A%0D%0A" +
+          "Viele Grüße"
+        );
+
+        window.location.href = "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
+      });
+    });
+  </script>
+</body>
+</html>
