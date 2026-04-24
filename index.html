@@ -841,7 +841,7 @@
               <input type="text" name="domain" placeholder="z. B. example.com" inputmode="url" autocomplete="url">
             </label>
             <div class="cta-actions">
-              <button class="button button-primary" type="submit">Analyse anfragen</button>
+              <button class="button button-primary cta-submit" type="button">Analyse anfragen</button>
               <a class="button button-secondary" href="#reifegrad">Erst Whitepaper lesen</a>
             </div>
             <div class="microcopy">Sie geben nur Ihre Domain ein und senden die Anfrage direkt per E-Mail.</div>
@@ -1239,7 +1239,7 @@
                   <input type="text" name="domain" placeholder="z. B. company.de" inputmode="url" autocomplete="url">
                 </label>
                 <div class="cta-actions">
-                  <button class="button button-primary" type="submit">Analyse anfragen</button>
+                  <button class="button button-primary cta-submit" type="button">Analyse anfragen</button>
                 </div>
                 <div class="microcopy">Die Anfrage wird direkt als E-Mail geöffnet.</div>
                 <div class="form-feedback" aria-live="polite"></div>
@@ -1297,9 +1297,12 @@
     let mailtoInFlight = false;
 
     document.querySelectorAll(".cta-form").forEach((form) => {
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
+      const submitButton = form.querySelector(".cta-submit");
+      if (!submitButton) {
+        return;
+      }
 
+      submitButton.addEventListener("click", () => {
         if (mailtoInFlight) {
           return;
         }
