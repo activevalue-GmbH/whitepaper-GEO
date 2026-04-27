@@ -240,7 +240,8 @@
       color: var(--muted);
     }
 
-    .cta-form input {
+    .cta-form input,
+    .cta-form textarea {
       width: 100%;
       min-height: 50px;
       border: 1px solid var(--line);
@@ -249,6 +250,12 @@
       font: inherit;
       color: var(--ink);
       background: #f9faf7;
+    }
+
+    .cta-form textarea {
+      min-height: 120px;
+      padding: 14px 16px;
+      resize: vertical;
     }
 
     .cta-actions {
@@ -297,6 +304,26 @@
       min-height: 20px;
       font-size: 13px;
       color: var(--danger);
+    }
+
+    .form-feedback.is-success {
+      color: var(--green-dark);
+    }
+
+    .form-feedback.is-loading {
+      color: var(--ink);
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .section-nav {
@@ -953,20 +980,39 @@
             <h2>Domain-Check für Ihren GEO-Status anfragen</h2>
             <p>
               Wenn Sie Ihre Ausgangslage direkt prüfen möchten, reicht hier die Angabe Ihrer
-              Domain. Die Anfrage öffnet sich als E-Mail an Anton.
+              Domain. Die Anfrage geht direkt über das Formular an Anton.
             </p>
           </div>
 
-          <form class="cta-form" data-mail-recipient="anton.klees@active-value.de">
+          <form
+            class="cta-form"
+            action="https://formsubmit.co/ajax/anton.klees@active-value.de"
+            method="POST"
+            data-form-name="Hero Domain Check"
+            data-source-url="https://activevalue-gmbh.github.io/whitepaper-GEO/"
+          >
+            <input type="hidden" name="_subject" value="Neue GEO-Check-Anfrage">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_url" value="https://activevalue-gmbh.github.io/whitepaper-GEO/">
+            <input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off">
             <label>
               <div class="field-label">Zu prüfende Domain</div>
-              <input type="text" name="domain" placeholder="z. B. example.com" inputmode="url" autocomplete="url">
+              <input type="text" name="domain" placeholder="z. B. example.com" inputmode="url" autocomplete="url" required>
+            </label>
+            <label>
+              <div class="field-label">Ihr Name</div>
+              <input type="text" name="name" placeholder="Vor- und Nachname" autocomplete="name" required>
+            </label>
+            <label>
+              <div class="field-label">Ihre E-Mail</div>
+              <input type="email" name="email" placeholder="name@unternehmen.de" autocomplete="email" required>
             </label>
             <div class="cta-actions">
-              <button class="button button-primary cta-submit" type="button">Analyse anfragen</button>
+              <button class="button button-primary cta-submit" type="submit">Analyse anfragen</button>
               <a class="button button-secondary" href="#reifegrad">Erst Whitepaper lesen</a>
             </div>
-            <div class="microcopy">Sie geben nur Ihre Domain ein und senden die Anfrage direkt per E-Mail.</div>
+            <div class="microcopy">Die Anfrage wird direkt im Formular versendet. Beim ersten Live-Absenden muss Anton die Formular-Adresse einmalig per E-Mail bestätigen.</div>
             <div class="form-feedback" aria-live="polite"></div>
           </form>
         </aside>
@@ -1355,15 +1401,39 @@
                 Der einfachste Einstieg ist ein kompakter Check Ihrer Domain. Sie bekommen eine
                 erste Einordnung, wo strukturelle und inhaltliche Hebel liegen.
               </p>
-              <form class="cta-form" data-mail-recipient="anton.klees@active-value.de" style="margin-top: 18px;">
+              <form
+                class="cta-form"
+                action="https://formsubmit.co/ajax/anton.klees@active-value.de"
+                method="POST"
+                data-form-name="Kontakt Domain Check"
+                data-source-url="https://activevalue-gmbh.github.io/whitepaper-GEO/"
+                style="margin-top: 18px;"
+              >
+                <input type="hidden" name="_subject" value="Neue GEO-Check-Anfrage">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_captcha" value="true">
+                <input type="hidden" name="_url" value="https://activevalue-gmbh.github.io/whitepaper-GEO/">
+                <input type="text" name="_honey" class="sr-only" tabindex="-1" autocomplete="off">
                 <label>
                   <div class="field-label">Domain</div>
-                  <input type="text" name="domain" placeholder="z. B. company.de" inputmode="url" autocomplete="url">
+                  <input type="text" name="domain" placeholder="z. B. company.de" inputmode="url" autocomplete="url" required>
+                </label>
+                <label>
+                  <div class="field-label">Ihr Name</div>
+                  <input type="text" name="name" placeholder="Vor- und Nachname" autocomplete="name" required>
+                </label>
+                <label>
+                  <div class="field-label">Ihre E-Mail</div>
+                  <input type="email" name="email" placeholder="name@unternehmen.de" autocomplete="email" required>
+                </label>
+                <label>
+                  <div class="field-label">Optionaler Kontext</div>
+                  <textarea name="message" placeholder="Zum Beispiel: Welche Leistungen oder Wettbewerber sollen besonders berücksichtigt werden?"></textarea>
                 </label>
                 <div class="cta-actions">
-                  <button class="button button-primary cta-submit" type="button">Analyse anfragen</button>
+                  <button class="button button-primary cta-submit" type="submit">Analyse anfragen</button>
                 </div>
-                <div class="microcopy">Die Anfrage wird direkt als E-Mail geöffnet.</div>
+                <div class="microcopy">Die Anfrage wird ohne Mailprogramm direkt über das Formular versendet.</div>
                 <div class="form-feedback" aria-live="polite"></div>
               </form>
             </div>
@@ -1416,47 +1486,69 @@
       return value.trim().replace(/^https?:\/\//i, "").replace(/\/.*$/, "");
     }
 
-    let mailtoInFlight = false;
-
     document.querySelectorAll(".cta-form").forEach((form) => {
+      const feedback = form.querySelector(".form-feedback");
       const submitButton = form.querySelector(".cta-submit");
-      if (!submitButton) {
+      const domainInput = form.querySelector('input[name="domain"]');
+
+      if (!feedback || !submitButton || !domainInput) {
         return;
       }
 
-      submitButton.addEventListener("click", () => {
-        if (mailtoInFlight) {
-          return;
-        }
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
 
-        const input = form.querySelector('input[name="domain"]');
-        const feedback = form.querySelector(".form-feedback");
-        const recipient = form.dataset.mailRecipient || "anton.klees@active-value.de";
-        const domain = normalizeDomain(input.value);
+        const domain = normalizeDomain(domainInput.value);
+        domainInput.value = domain;
 
         if (!domain || !domain.includes(".")) {
+          feedback.className = "form-feedback";
           feedback.textContent = "Bitte eine valide Domain eingeben, z. B. example.com.";
-          input.focus();
+          domainInput.focus();
           return;
         }
 
-        feedback.textContent = "";
+        if (!form.reportValidity()) {
+          return;
+        }
 
-        const subject = encodeURIComponent("Anfrage GEO-Domain-Check: " + domain);
-        const body = encodeURIComponent(
-          "Hallo Anton,\r\n\r\n" +
-          "ich möchte gern einen GEO-Check für folgende Domain anfragen:\r\n" +
-          domain +
-          "\r\n\r\n" +
-          "Viele Grüße"
-        );
+        const formData = new FormData(form);
+        const sourceUrl = form.dataset.sourceUrl || window.location.href;
+        const formName = form.dataset.formName || "GEO Domain Check";
 
-        mailtoInFlight = true;
-        setTimeout(() => {
-          mailtoInFlight = false;
-        }, 2500);
+        formData.set("domain", domain);
+        formData.set("_subject", "GEO-Check-Anfrage: " + domain);
+        formData.set("form_name", formName);
+        formData.set("page_url", sourceUrl);
 
-        window.location.href = "mailto:" + recipient + "?subject=" + subject + "&body=" + body;
+        submitButton.disabled = true;
+        feedback.className = "form-feedback is-loading";
+        feedback.textContent = "Anfrage wird gesendet ...";
+
+        try {
+          const response = await fetch(form.action, {
+            method: "POST",
+            body: formData,
+            headers: {
+              Accept: "application/json"
+            }
+          });
+
+          const result = await response.json().catch(() => null);
+
+          if (!response.ok || (result && result.success === false)) {
+            throw new Error(result && result.message ? result.message : "Unbekannter Fehler");
+          }
+
+          form.reset();
+          feedback.className = "form-feedback is-success";
+          feedback.textContent = "Danke. Die Anfrage wurde versendet. Falls dies der erste Live-Einsatz ist, muss Anton die Aktivierungs-Mail von FormSubmit einmalig bestätigen.";
+        } catch (error) {
+          feedback.className = "form-feedback";
+          feedback.textContent = "Das Senden hat gerade nicht geklappt. Sie können alternativ direkt an anton.klees@active-value.de schreiben.";
+        } finally {
+          submitButton.disabled = false;
+        }
       });
     });
   </script>
