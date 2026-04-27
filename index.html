@@ -1012,7 +1012,7 @@
               <button class="button button-primary cta-submit" type="submit">Analyse anfragen</button>
               <a class="button button-secondary" href="#reifegrad">Erst Whitepaper lesen</a>
             </div>
-            <div class="microcopy">Die Anfrage wird direkt im Formular versendet. Beim ersten Live-Absenden muss Anton die Formular-Adresse einmalig per E-Mail bestätigen.</div>
+            <div class="microcopy">Die Anfrage wird direkt und ohne Mailprogramm über das Formular versendet.</div>
             <div class="form-feedback" aria-live="polite"></div>
           </form>
         </aside>
@@ -1547,7 +1547,7 @@
 
           form.reset();
           feedback.className = "form-feedback is-success";
-          feedback.textContent = "Danke. Die Anfrage wurde versendet. Falls dies der erste Live-Einsatz ist, muss Anton die Aktivierungs-Mail von FormSubmit einmalig bestätigen.";
+          feedback.textContent = "Danke. Die Anfrage wurde versendet. Wir melden uns mit der Einordnung schnellstmöglich zurück.";
         } catch (error) {
           feedback.className = "form-feedback";
           feedback.textContent = "Das Senden hat gerade nicht geklappt. Sie können alternativ direkt an anton.klees@active-value.de schreiben.";
